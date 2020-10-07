@@ -3,9 +3,13 @@ import "./App.css";
 import axios from 'axios';
 import Title from './Title';
 import ImageandExplanation from './ImageandExplanation'
+import MarsRover from './MarsRover'
+import Footer from './Footer'
 
 function App() {
   const [data, setData] = useState({});
+  const [imgUrls, setImgUrls] = useState('');
+
   useEffect(() => {
     const fetchData = () => {
       axios.get(`https://api.nasa.gov/planetary/apod?api_key=NyCvtPnHyvSaaxO0crf2FTm1SYd3xZAtL9kn9SXu`)
@@ -19,6 +23,19 @@ function App() {
     fetchData();   
   }, [])
 
+  useEffect(() => {
+    const fetchImgUrls = () => {
+      axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY`)
+        .then(res => {
+              setImgUrls(res.data.photos[0].img_src)
+        })
+        .catch(err => {
+          debugger
+        })
+    }
+    fetchImgUrls();   
+  }, [])
+
   
   return (
     <div className="App">
@@ -28,6 +45,11 @@ function App() {
       </p>
       <Title title={data.title} />
       <ImageandExplanation imgURL={data.url} explanation={data.explanation}/>
+      <Footer date={data.date} copyright={data.copyright} />
+      <h2>Mars Rover Pictures</h2>
+      <MarsRover imgUrl={imgUrls} />
+
+      
     </div>
   );
 }
