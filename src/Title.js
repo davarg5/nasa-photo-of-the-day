@@ -6,7 +6,7 @@ export default function Title(props) {
 
     return (
         <div className='App-header'>
-            <h1>{title}</h1>
+            <h1>Image of the Day: <br></br>{title}</h1>
         </div>
     )
 
