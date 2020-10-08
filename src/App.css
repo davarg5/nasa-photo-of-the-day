@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 50vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,9 +41,7 @@
   width: 80%;
 }
 
-.daily-img-container {
-  background-color: lightgray;
-}
+
 
 .explanation {
   width: 80%;

@@ -8,17 +8,22 @@ export default function Footer(props)
 
     const Footer = styled.div`
         background-image: url('https://scx1.b-cdn.net/csz/news/800/2018/studyofdista.jpg');
-        padding-top: 3%;
-        padding-bottom: 3%;
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
     `
 
-    const FooterText = styled.div``
+    const FooterText = styled.p`
+        color: white;
+        font-size: 1rem;
+        font-family: 'Roboto Slab', serif;
+    `
+
 
 
     return (
         <Footer>
-        <p>Date: {date} <br></br>
-        Copyright: {copyright}</p>
+        <FooterText>Date: {date} <br></br>
+        Copyright: {copyright}</FooterText>
         </Footer>
     );
 }

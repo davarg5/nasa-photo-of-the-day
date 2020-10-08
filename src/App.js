@@ -32,28 +32,25 @@ function App() {
         })
         .catch(err => {
           debugger
-        })
+        }) 
     }
     fetchImgUrls();   
   }, [])
 
   const AppScreen = styled.div`
     text-align: center;
-    border: 5px solid black;
+    border: 15px solid black;
+    background-color: #282c34;
   `
+
+
   
   return (
     <AppScreen>
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
       <Title title={data.title} />
       <ImageandExplanation imgURL={data.url} explanation={data.explanation}/>
-      <Footer date={data.date} copyright={data.copyright} />
-      <h2>Mars Rover Pictures</h2>
       <MarsRover imgUrl={imgUrls} />
-
+      <Footer date={data.date} copyright={data.copyright} />
       
     </AppScreen>
 
