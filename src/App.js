@@ -5,6 +5,7 @@ import Title from './Title';
 import ImageandExplanation from './ImageandExplanation'
 import MarsRover from './MarsRover'
 import Footer from './Footer'
+import styled from 'styled-components';
 
 function App() {
   const [data, setData] = useState({});
@@ -36,9 +37,13 @@ function App() {
     fetchImgUrls();   
   }, [])
 
+  const AppScreen = styled.div`
+    text-align: center;
+    border: 5px solid black;
+  `
   
   return (
-    <div className="App">
+    <AppScreen>
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
@@ -50,7 +55,8 @@ function App() {
       <MarsRover imgUrl={imgUrls} />
 
       
-    </div>
+    </AppScreen>
+
   );
 }
 
