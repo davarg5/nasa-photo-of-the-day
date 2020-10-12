@@ -18,9 +18,11 @@ export default function MarsRover(props)
     const ImgDiv = styled.div`
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
     `
     const Images = styled.img`
         width: 30%;
+        border-radius: 10px;
     `
 
 
